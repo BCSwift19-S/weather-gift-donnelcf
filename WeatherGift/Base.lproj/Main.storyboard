@@ -118,9 +118,13 @@
                                 </prototypes>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jmH-dh-U2h">
-                                <rect key="frame" x="0.0" y="763" width="375" height="49"/>
+                                <rect key="frame" x="0.0" y="729" width="375" height="49"/>
                                 <items>
-                                    <barButtonItem systemItem="edit" id="iX3-UA-hd8"/>
+                                    <barButtonItem title="Edit" id="iX3-UA-hd8">
+                                        <connections>
+                                            <action selector="editBarButtonPressed:" destination="Wm9-Qf-STH" id="uaz-Ka-PEP"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="MB0-1i-To1"/>
                                     <barButtonItem systemItem="add" id="z35-Ac-3Zh"/>
                                 </items>
@@ -128,17 +132,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="jmH-dh-U2h" secondAttribute="bottom" id="3k0-Kh-gVN"/>
-                            <constraint firstItem="jmH-dh-U2h" firstAttribute="leading" secondItem="UjZ-0w-4Op" secondAttribute="leading" id="7jm-k8-flS"/>
-                            <constraint firstItem="ipL-v8-hJ0" firstAttribute="leading" secondItem="UjZ-0w-4Op" secondAttribute="leading" id="Ofz-E7-e4L"/>
-                            <constraint firstItem="ipL-v8-hJ0" firstAttribute="trailing" secondItem="UjZ-0w-4Op" secondAttribute="trailing" id="Oxl-Rp-1pu"/>
-                            <constraint firstItem="UjZ-0w-4Op" firstAttribute="bottom" secondItem="ipL-v8-hJ0" secondAttribute="bottom" constant="44" id="Vho-pu-Yhu"/>
-                            <constraint firstItem="jmH-dh-U2h" firstAttribute="trailing" secondItem="UjZ-0w-4Op" secondAttribute="trailing" id="Y6x-EH-N89"/>
-                            <constraint firstItem="ipL-v8-hJ0" firstAttribute="top" secondItem="UjZ-0w-4Op" secondAttribute="top" id="olQ-3U-fgI"/>
+                            <constraint firstItem="ipL-v8-hJ0" firstAttribute="leading" secondItem="UjZ-0w-4Op" secondAttribute="leading" id="68u-MF-qWR"/>
+                            <constraint firstItem="jmH-dh-U2h" firstAttribute="bottom" secondItem="UjZ-0w-4Op" secondAttribute="bottom" id="R3y-iH-KeK"/>
+                            <constraint firstItem="UjZ-0w-4Op" firstAttribute="bottom" secondItem="ipL-v8-hJ0" secondAttribute="bottom" constant="44" id="SpX-09-hGp"/>
+                            <constraint firstItem="ipL-v8-hJ0" firstAttribute="top" secondItem="UjZ-0w-4Op" secondAttribute="top" id="ZlW-Qb-7Aw"/>
+                            <constraint firstItem="jmH-dh-U2h" firstAttribute="leading" secondItem="UjZ-0w-4Op" secondAttribute="leading" id="hgA-Dm-r7v"/>
+                            <constraint firstItem="ipL-v8-hJ0" firstAttribute="trailing" secondItem="UjZ-0w-4Op" secondAttribute="trailing" id="iW3-Dw-yA1"/>
+                            <constraint firstItem="jmH-dh-U2h" firstAttribute="top" secondItem="LX0-Aq-arR" secondAttribute="top" constant="729" id="t9i-ux-s5f"/>
+                            <constraint firstItem="jmH-dh-U2h" firstAttribute="trailing" secondItem="UjZ-0w-4Op" secondAttribute="trailing" id="xYs-LX-aAf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UjZ-0w-4Op"/>
                     </view>
                     <connections>
+                        <outlet property="addBarButton" destination="z35-Ac-3Zh" id="jdS-f6-lYz"/>
+                        <outlet property="editBarButton" destination="iX3-UA-hd8" id="VRi-Tv-Kk2"/>
                         <outlet property="tableView" destination="ipL-v8-hJ0" id="9zM-e8-9w8"/>
                     </connections>
                 </viewController>
