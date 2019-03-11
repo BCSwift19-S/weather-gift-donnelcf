@@ -20,10 +20,8 @@ class PageVC: UIPageViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         delegate = self
         dataSource = self
-
         setViewControllers([createDetailVC(forPage: 0)], direction: .forward, animated: false, completion: nil)
     }
     
