@@ -33,16 +33,18 @@ class PageVC: UIPageViewController {
     }
     
     func configurePageControl() {
-        let pageControlHeight: CGFloat = barButtonHeight
-        let pageControlWidth: CGFloat = view.frame.width - (barButtonWidth * 2)
-        
-        let safeHeight = view.frame.height - view.safeAreaInsets.bottom
-        pageControl = UIPageControl(frame: CGRect(x: (view.frame.width - pageControlWidth) / 2, y: safeHeight - pageControlHeight, width: pageControlWidth, height: pageControlHeight))
+        let largestWidth = barButtonWidth
+        let pageControlHeight: CGFloat = barButtonWidth
+        let pageControlWidth: CGFloat = view.frame.width - (largestWidth * 2)
+        let safeHeight = view.frame.height -
+            view.safeAreaInsets.bottom
+        pageControl = UIPageControl(frame: CGRect(x: (view.frame.width - pageControlWidth)/2, y: safeHeight - pageControlHeight, width: pageControlWidth, height: pageControlHeight))
         pageControl.pageIndicatorTintColor = UIColor.lightGray
         pageControl.currentPageIndicatorTintColor = UIColor.black
+        pageControl.backgroundColor = UIColor.white
         pageControl.numberOfPages = locationsArray.count
         pageControl.currentPage = currentPage
-        pageControl.addTarget(self, action: #selector(pageControllerPressed), for: .touchUpInside)
+        pageControl.addTarget(self, action: #selector(pageControlPressed), for: .touchUpInside)
         view.addSubview(pageControl)
     }
     
@@ -99,41 +101,40 @@ class PageVC: UIPageViewController {
 
 }
 
-extension PageVC: UIPageViewControllerDelegate, UIPageViewControllerDataSource {
-    
+extension PageVC: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        
         if let currentViewController = viewController as? DetailVC {
             if currentViewController.currentPage < locationsArray.count - 1 {
                 return createDetailVC(forPage: currentViewController.currentPage + 1)
             }
         }
-        
         return nil
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        
         if let currentViewController = viewController as? DetailVC {
             if currentViewController.currentPage > 0 {
                 return createDetailVC(forPage: currentViewController.currentPage - 1)
             }
         }
-        
         return nil
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-        if let currentViewConroller = pageViewController.viewControllers?[0] as? DetailVC {
-            pageControl.currentPage = currentViewConroller.currentPage
+        if let currentViewController = pageViewController.viewControllers?[0] as? DetailVC {
+            pageControl.currentPage = currentViewController.currentPage
         }
     }
     
-    @objc func pageControllerPressed() {
+    @objc func pageControlPressed() {
         guard let currentViewController = self.viewControllers?[0] as? DetailVC else {return}
-            currentPage = currentViewController.currentPage
-            if pageControl.currentPage < currentPage {
-                setViewControllers([createDetailVC(forPage: pageControl.currentPage)], direction: .reverse, animated: true, completion: nil)
-            } else if pageControl.currentPage > currentPage {
-                setViewControllers([createDetailVC(forPage: pageControl.currentPage)], direction: .forward, animated: true, completion: nil)
-            }
+        currentPage = currentViewController.currentPage
+        if pageControl.currentPage < currentPage {
+            setViewControllers([createDetailVC(forPage: pageControl.currentPage)], direction: .reverse, animated: true, completion: nil)
+        } else if pageControl.currentPage > currentPage {
+            setViewControllers([createDetailVC(forPage: pageControl.currentPage)], direction: .forward, animated: true, completion: nil)
         }
+    }
 }
