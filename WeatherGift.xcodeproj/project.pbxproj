@@ -16,6 +16,7 @@
 		8F12D851223609570058B5B6 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12D850223609570058B5B6 /* ListVC.swift */; };
 		8F12D85322360AB10058B5B6 /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F12D85222360AB10058B5B6 /* PageVC.swift */; };
 		8F3A908E223ED55B006E271B /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3A908D223ED55B006E271B /* WeatherLocation.swift */; };
+		8F3A9090223F2411006E271B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F3A908F223F2411006E271B /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		8F12D850223609570058B5B6 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		8F12D85222360AB10058B5B6 /* PageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
 		8F3A908D223ED55B006E271B /* WeatherLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
+		8F3A908F223F2411006E271B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA2CA4D4DD9C60BCB4626EDE /* Pods-WeatherGift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherGift.release.xcconfig"; path = "Target Support Files/Pods-WeatherGift/Pods-WeatherGift.release.xcconfig"; sourceTree = "<group>"; };
 		FDC1553AE0701B91C13C66BE /* Pods-WeatherGift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherGift.debug.xcconfig"; path = "Target Support Files/Pods-WeatherGift/Pods-WeatherGift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +74,7 @@
 				8F12D85222360AB10058B5B6 /* PageVC.swift */,
 				8F12D84E223064570058B5B6 /* DetailVC.swift */,
 				8F12D850223609570058B5B6 /* ListVC.swift */,
+				8F3A908F223F2411006E271B /* Constants.swift */,
 				8F12D840223064150058B5B6 /* Main.storyboard */,
 				8F12D843223064190058B5B6 /* Assets.xcassets */,
 				8F12D845223064190058B5B6 /* LaunchScreen.storyboard */,
@@ -247,6 +250,7 @@
 				8F12D85322360AB10058B5B6 /* PageVC.swift in Sources */,
 				8F12D83D223064150058B5B6 /* AppDelegate.swift in Sources */,
 				8F12D84F223064570058B5B6 /* DetailVC.swift in Sources */,
+				8F3A9090223F2411006E271B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
